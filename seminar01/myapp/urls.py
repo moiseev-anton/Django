@@ -9,7 +9,7 @@ urlpatterns = [
     path('some_number/', views.some_number, name='some_number'),
     # домашнее задание 1
     path('main/', views.main, name='main'),
-    path('about/', views.about, name='about'),
+    path('about/', views.About.as_view(), name='about'),
 ]
 
 
