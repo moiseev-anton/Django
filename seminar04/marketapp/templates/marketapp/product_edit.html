@@ -1,0 +1,12 @@
+{% extends "marketapp/base.html" %}
+
+{% block title %}Edit{% endblock %}
+
+{% block content %}
+  <h2>Редактирование товара</h2>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить изменения</button>
+  </form>
+{% endblock %}

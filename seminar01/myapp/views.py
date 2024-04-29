@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from random import randint, choice
 from django.views.generic import TemplateView
+
 import logging
 
 logger = logging.getLogger(__name__)
@@ -24,7 +25,6 @@ def some_number(request):
     return HttpResponse(randint(0, 100))
 
 
-# домашнее задание
 def main(request):
     return render(request, 'myapp/main.html')
 
@@ -36,7 +36,21 @@ class About(TemplateView):
         context = super().get_context_data(**kwargs)
         return context
 
-
+# домашнее задание 1
+# def main(request):
+#     logger.info('Посещение страницы main')
+#     html = """
+#     <html>
+#     <head><title>Главная</title></head>
+#     <body>
+#     <h3>Добро пожаловать!</h3>
+#     <p>Это мой первый Django сайт</p>
+#     <a href='/myapp/about/'>О себе</a>
+#     </body>
+#     </html>
+#     """
+#     return HttpResponse(html)
+#
 # def about(request):
 #     logger.info('Посещение страницы about')
 #     html = """
